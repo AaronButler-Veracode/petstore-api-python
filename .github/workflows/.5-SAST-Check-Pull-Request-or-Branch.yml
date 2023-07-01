@@ -1,0 +1,24 @@
+name: .5-SAST-Check-Pull-Request-or-Branch
+
+# This workflow will checkout the code, ZIP the Python file, and and scan with the Veracode Static Pipeline Scanner.
+on:
+  # Enables manual runs
+  workflow_dispatch:
+  # Runs "Every day at 4:05" (see https://crontab.guru)
+  schedule:
+  - cron: "5 4 * * *"
+
+jobs:
+  SAST-Check-Pull-Request-or-Branch:
+    runs-on: [ubuntu-latest]
+    steps:
+
+# Checkout
+      - uses: actions/checkout@v2
+            
+# ZIP up the Python files
+      - name: Zip Application Files 
+        uses: vimtor/action-zip@v1
+        with:
+          files: app/bin/Debug/netcoreapp3.1/
+          dest: verademodotnetcore.zip
