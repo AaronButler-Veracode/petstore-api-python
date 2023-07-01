@@ -20,7 +20,7 @@ jobs:
       - name: Zip Application Files 
         uses: vimtor/action-zip@v1
         with:
-          files: ./**
+          files: ./
           dest: petstore-api-python.zip
   
 # Download Veracode Static Pipeline Scanner     
