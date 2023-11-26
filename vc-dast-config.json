@@ -1,12 +1,6 @@
 {
   "name": "Petstore_API_Python_Github",
   "scan_setting": {
-    "custom_hosts": [
-      {
-        "host_name": "petstore-api-python-github.qa",
-        "ip_address": "98.212.110.137"
-      }
-    ],
     "max_browsers": 10
   },
   "scanner_variables": [
@@ -20,11 +14,11 @@
     {
       "scan_config_request": {
         "target_url": {
-          "url": "http://petstore-api-python-github.qa:5000"
+          "url": "https://petstore-api-python.vc-labs.cloud"
         },
         "api_scan_setting": 
         {
-          "spec_id": "743431aa3b2b925211b77b855e12c862"
+          "spec_id": "d6818c916c2488beacce6e4d8fc75b54"
         }
       }
     }
