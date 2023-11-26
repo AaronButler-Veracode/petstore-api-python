@@ -70,7 +70,10 @@ jobs:
         run: |
          export VERACODE_API_KEY_ID=${{ secrets.VERACODE_API_ID }}
          export VERACODE_API_KEY_SECRET=${{ secrets.VERACODE_API_KEY }}
-         http --auth-type=veracode_hmac POST "https://api.veracode.com/was/configservice/v1/analyses?job_options=run_verification=false&scan_type=API_SCAN" < /tmp/vc-dast-config.json 
+         # http --auth-type=veracode_hmac POST "https://api.veracode.com/was/configservice/v1/analyses?job_options=run_verification=false&scan_type=API_SCAN" < /tmp/vc-dast-config.json 
+         # Get API spec ID's and output to console
+         http --auth-type=veracode_hmac GET "https://api.veracode.com/was/configservice/v1/api_specifications"
+
 
   crashtest_security_scan:
     runs-on: ubuntu-latest
